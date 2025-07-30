@@ -62,7 +62,15 @@ public class DataCollector : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.R)) m_recording = !m_recording;
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			m_recording = !m_recording;
+
+			if (m_recording)
+			{
+				Debug.Log("Start recording");
+			}
+		}
 
 		if (m_recording)
 		{
@@ -92,7 +100,7 @@ public class DataCollector : MonoBehaviour
 				Vector3 gripperPos = gripper.transform.position;
 				float distance = (gripperPos - bottlePos).magnitude;
 				filePath = $"{Application.dataPath}/{dataFolder}/distance.csv";
-				if (format == Format.CSV) DataWriter.WriteToCSV("distance", distance, writeMode);
+				if (format == Format.CSV) DataWriter.WriteToCSV(filePath, distance, writeMode);
 			}
 
 			else 

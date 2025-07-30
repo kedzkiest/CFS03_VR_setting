@@ -39,17 +39,17 @@ public class RobotArmAvatar : MocopiAvatarBase
         float[] px,float[] py,float[] pz)
     {
         /* Shoulder (ID 15) */
-        var eS = RH2LH(rx[_idx[15]], ry[_idx[15]], rz[_idx[15]], rw[_idx[15]]).eulerAngles;
+        var eS = RH2LH(rx[_idx[16]], ry[_idx[16]], rz[_idx[16]], rw[_idx[16]]).eulerAngles;
         _l1 = Wrap(eS.y); // link1 Yaw (Y-axis)
         _l2 = Wrap(eS.x); // link2 Pitch (X-axis)
         _l6 = Wrap(eS.z); // link6 Roll (Z-axis)
 
         /* Elbow (ID 16) */
-        var eE = RH2LH(rx[_idx[16]], ry[_idx[16]], rz[_idx[16]], rw[_idx[16]]).eulerAngles;
+        var eE = RH2LH(rx[_idx[17]], ry[_idx[17]], rz[_idx[17]], rw[_idx[17]]).eulerAngles;
         _l3 = Wrap(eE.x); // link3 Pitch (X-axis)
 
         /* Wrist (ID 17) */
-        var eW = RH2LH(rx[_idx[17]], ry[_idx[17]], rz[_idx[17]], rw[_idx[17]]).eulerAngles;
+        var eW = RH2LH(rx[_idx[18]], ry[_idx[18]], rz[_idx[18]], rw[_idx[18]]).eulerAngles;
         _l4 = Wrap(eW.x); // link4 Pitch (X-axis)
         _l5 = Wrap(eW.y); // link5 Yaw (Y-axis)
     }

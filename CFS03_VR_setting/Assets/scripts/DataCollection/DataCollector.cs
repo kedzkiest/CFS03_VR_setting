@@ -62,7 +62,15 @@ public class DataCollector : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.R)) m_recording = !m_recording;
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			m_recording = !m_recording;
+
+			if (m_recording)
+			{
+				Debug.Log("Start recording");
+			}
+		}
 
 		if (m_recording)
 		{

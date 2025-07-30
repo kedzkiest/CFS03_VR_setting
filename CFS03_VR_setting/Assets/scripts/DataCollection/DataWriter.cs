@@ -5,7 +5,7 @@ public static class DataWriter
 {
 	public static void WriteToCSV(string path, Vector3 position, Vector3 rotation, WriteMode writemode)
 	{
-		string line = $"{position.x},{position.y},{position.z},{rotation.x},{rotation.y},{rotation.z}";
+		string line = $"{position.x:F8},{position.y:F8},{position.z:F8},{rotation.x:F8},{rotation.y:F8},{rotation.z:F8}";
 
 		bool append = writemode == WriteMode.Append;
 		using (var writer = new System.IO.StreamWriter(path, append))
@@ -19,7 +19,7 @@ public static class DataWriter
 		bool append = writemode == WriteMode.Append;
 		using (var writer = new System.IO.StreamWriter(path, append))
 		{
-			writer.WriteLine(distance);
+			writer.WriteLine($"{distance:F8}");
 		}
 	}
 }

@@ -7,6 +7,8 @@ TagManager:
   - robot
   - Joint
   - Gripper
+  - Floor Camera
+  - Gripper Camera
   layers:
   - Default
   - TransparentFX

@@ -2499,6 +2499,10 @@ PrefabInstance:
       value: floor
       objectReference: {fileID: 0}
     - target: {fileID: 3411828210654251018, guid: 879cb84c86bef6f3f879ff2b97ec713d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411828210654251018, guid: 879cb84c86bef6f3f879ff2b97ec713d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
       objectReference: {fileID: 0}
@@ -7577,7 +7581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769917936381793273, guid: 59767062412d919419c158c1f6635807, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.481
+      value: -0.681
       objectReference: {fileID: 0}
     - target: {fileID: 1769917936381793273, guid: 59767062412d919419c158c1f6635807, type: 3}
       propertyPath: m_LocalPosition.z

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - robot
+  - Joint
+  - Gripper
+  - Floor Camera
+  - Gripper Camera
   layers:
   - Default
   - TransparentFX

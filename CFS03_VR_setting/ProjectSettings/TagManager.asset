@@ -7,6 +7,11 @@ TagManager:
   - robot
   - Joint
   - Gripper
+<<<<<<< HEAD
+=======
+  - Floor Camera
+  - Gripper Camera
+>>>>>>> origin/main
   layers:
   - Default
   - TransparentFX

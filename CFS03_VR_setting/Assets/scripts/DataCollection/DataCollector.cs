@@ -31,12 +31,10 @@ public class DataCollector : MonoBehaviour
 	private GameObject m_robot;
 	private GameObject[] m_robotParts;
 
-
-
 	private bool m_recording = false;
 
-	// should be made a static function for another class
-	
+	private long m_recordingStartTime;
+
 
 	private void Start()
 	{
@@ -69,11 +67,18 @@ public class DataCollector : MonoBehaviour
 			if (m_recording)
 			{
 				Debug.Log("Start recording");
+				m_recordingStartTime = (long)(Time.time * 1000);
 			}
+
+			else Debug.Log("Stop recording");
 		}
 
 		if (m_recording)
 		{
+			// miliseconds since epoch
+			long timeStampMs = (long)(Time.time * 1000);
+			timeStampMs -= m_recordingStartTime;
+
 			string filePath;
 			foreach (GameObject part in m_robotParts)
 			{
@@ -82,8 +87,18 @@ public class DataCollector : MonoBehaviour
 				{
 					Vector3 pos = part.transform.position;
 					Vector3 rot = part.transform.rotation.eulerAngles;
+
 					filePath = $"{Application.dataPath}/{dataFolder}/{part.name}.csv";
-					if (format == Format.CSV) DataWriter.WriteToCSV(filePath, pos, rot, writeMode);
+					if (format == Format.CSV)
+					{
+						// Write column headers if the file is new or being overwritten
+						if (writeMode == WriteMode.Overwrite || !System.IO.File.Exists(filePath))
+						{
+							DataWriter.WriteColumnHeaders(filePath, "PositionX,PositionY,PositionZ,RotationX,RotationY,RotationZ,TimeStampMs", writeMode);
+						}
+
+						DataWriter.WriteToCSV(filePath, pos, rot, timeStampMs, writeMode);
+					}
 				}
 			}
 
@@ -94,13 +109,31 @@ public class DataCollector : MonoBehaviour
 				Vector3 bottlePos = bottle.transform.position;
 				Vector3 bottleRot = bottle.transform.rotation.eulerAngles;
 				filePath = $"{Application.dataPath}/{dataFolder}/bottle.csv";
-				if (format == Format.CSV) DataWriter.WriteToCSV(filePath, bottlePos, bottleRot, writeMode);
+				if (format == Format.CSV)
+				{
+					// Write column headers if the file is new or being overwritten
+					if (writeMode == WriteMode.Overwrite || !System.IO.File.Exists(filePath))
+					{
+						DataWriter.WriteColumnHeaders(filePath, "PositionX,PositionY,PositionZ,RotationX,RotationY,RotationZ,TimeStampMs", writeMode);
+					}
+
+					DataWriter.WriteToCSV(filePath, bottlePos, bottleRot, timeStampMs, writeMode);
+				}
 
 				// Record distance between gripper and bottle
 				Vector3 gripperPos = gripper.transform.position;
 				float distance = (gripperPos - bottlePos).magnitude;
 				filePath = $"{Application.dataPath}/{dataFolder}/distance.csv";
-				if (format == Format.CSV) DataWriter.WriteToCSV(filePath, distance, writeMode);
+				if (format == Format.CSV)
+				{
+					// Write column headers if the file is new or being overwritten
+					if (writeMode == WriteMode.Overwrite || !System.IO.File.Exists(filePath))
+					{
+						DataWriter.WriteColumnHeaders(filePath, "distance between gripper and bottle, TimeStampMs", writeMode);
+					}
+
+					DataWriter.WriteToCSV(filePath, distance, timeStampMs, writeMode);
+				}
 			}
 
 			else 

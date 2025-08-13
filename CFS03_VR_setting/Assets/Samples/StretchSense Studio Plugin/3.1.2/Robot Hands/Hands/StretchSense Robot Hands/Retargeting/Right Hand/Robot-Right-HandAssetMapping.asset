@@ -1,0 +1,237 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 93736402, guid: a0cd9a58d974b9548ba272b50a233cc3, type: 3}
+  m_Name: Robot-Right-HandAssetMapping
+  m_EditorClassIdentifier: 
+  targetJointNames: {fileID: 0}
+  objectInitialized: 1
+  advancedMode: 0
+  mode: 1
+  indexCMC:
+  - jointType: 0
+    target: 
+    bendDriver: 0
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  indexMCP:
+  - jointType: 1
+    target: index_01_r
+    bendDriver: 1
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: 4a101e1e0c9ea824abdfe510dedaa167, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 12
+  indexPIP:
+  - jointType: 0
+    target: index_02_r
+    bendDriver: 2
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  indexDIP:
+  - jointType: 0
+    target: index_03_r
+    bendDriver: 2
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  middleCMC:
+  - jointType: 0
+    target: 
+    bendDriver: 0
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  middleMCP:
+  - jointType: 1
+    target: middle_01_r
+    bendDriver: 3
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: 4a101e1e0c9ea824abdfe510dedaa167, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 12
+  middlePIP:
+  - jointType: 0
+    target: middle_02_r
+    bendDriver: 4
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  middleDIP:
+  - jointType: 0
+    target: middle_03_r
+    bendDriver: 4
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  ringCMC:
+  - jointType: 0
+    target: 
+    bendDriver: 0
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  ringMCP:
+  - jointType: 1
+    target: ring_01_r
+    bendDriver: 5
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: 4a101e1e0c9ea824abdfe510dedaa167, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 12
+  ringPIP:
+  - jointType: 0
+    target: ring_02_r
+    bendDriver: 6
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  ringDIP:
+  - jointType: 0
+    target: ring_03_r
+    bendDriver: 6
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  pinkyCMC:
+  - jointType: 0
+    target: 
+    bendDriver: 0
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  pinkyMCP:
+  - jointType: 1
+    target: pinky_01_r
+    bendDriver: 7
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: 4a101e1e0c9ea824abdfe510dedaa167, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 12
+  pinkyPIP:
+  - jointType: 0
+    target: pinky_02_r
+    bendDriver: 8
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  pinkyDIP:
+  - jointType: 0
+    target: pinky_03_r
+    bendDriver: 8
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    startPose2: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 0
+  thumbCMC:
+  - jointType: 1
+    target: thumb_01_r
+    bendDriver: 9
+    bendStart: 0
+    bendEnd: 0.5
+    startPose1: {fileID: 11400000, guid: 13d4a9f485395584cb969c53a74fda9c, type: 2}
+    endPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    startPose2: {fileID: 11400000, guid: e70d18b95bcf07d4eaee2eec51374cd2, type: 2}
+    endPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    splayDriver: 11
+  - jointType: 1
+    target: thumb_01_r
+    bendDriver: 9
+    bendStart: 0.5
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: dfb0aab87dcb7204097ff5e590bd1274, type: 2}
+    endPose1: {fileID: 11400000, guid: e4a6e34018b7bff428bb7a6756997a8c, type: 2}
+    startPose2: {fileID: 11400000, guid: 7aeec40ca5e6af043810e9b510248503, type: 2}
+    endPose2: {fileID: 11400000, guid: f27ee8cb6f96dc24f9e370ac793fbd2a, type: 2}
+    splayDriver: 11
+  thumbMCP:
+  - jointType: 0
+    target: thumb_02_r
+    bendDriver: 9
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: 13d4a9f485395584cb969c53a74fda9c, type: 2}
+    endPose1: {fileID: 11400000, guid: e4a6e34018b7bff428bb7a6756997a8c, type: 2}
+    startPose2: {fileID: 11400000, guid: 13d4a9f485395584cb969c53a74fda9c, type: 2}
+    endPose2: {fileID: 11400000, guid: e4a6e34018b7bff428bb7a6756997a8c, type: 2}
+    splayDriver: 0
+  thumbDIP:
+  - jointType: 0
+    target: thumb_03_r
+    bendDriver: 10
+    bendStart: 0
+    bendEnd: 1
+    startPose1: {fileID: 11400000, guid: 13d4a9f485395584cb969c53a74fda9c, type: 2}
+    endPose1: {fileID: 11400000, guid: e4a6e34018b7bff428bb7a6756997a8c, type: 2}
+    startPose2: {fileID: 11400000, guid: 13d4a9f485395584cb969c53a74fda9c, type: 2}
+    endPose2: {fileID: 11400000, guid: e4a6e34018b7bff428bb7a6756997a8c, type: 2}
+    splayDriver: 0

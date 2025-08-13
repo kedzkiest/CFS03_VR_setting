@@ -6004,6 +6004,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
+--- !u!1 &991370981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991370983}
+  - component: {fileID: 991370982}
+  m_Layer: 0
+  m_Name: DataCollector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &991370982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991370981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949b3782f8d468a439e8bdb8e5fb4c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  format: 0
+  dataFolder: Data
+  writeMode: 0
+  bottle: {fileID: 1483393707}
+  gripper: {fileID: 1868228612}
+--- !u!4 &991370983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991370981}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.20924, y: 0.54908, z: 0.00554}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &996081329
 GameObject:
   m_ObjectHideFlags: 0
@@ -10197,6 +10246,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: fd59ea4d35559094f984b4c3a270f3ee, type: 2}
+--- !u!1 &1483393707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7292808117586842926, guid: 542c92fb752aed142a91ef2ae943eda2, type: 3}
+  m_PrefabInstance: {fileID: 1662777475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1496790996 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2391821817787365899, guid: 764e187de274c17408ec631ea56195b3, type: 3}

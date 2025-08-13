@@ -1,0 +1,13 @@
+workspace_Itoシーンに設定済みの環境があります。
+基本的にAssets/MocopiControl_Ito/Prefabsにあるものをシーンに置いて、参照や値を設定すれば動作するはずです(用意したプレハブ以外への依存は今のところ無いです)
+
+メインシーンに配置する場合の手順
+1. firefighterオブジェクトにRobotArmAvatarをアタッチ
+2. Link1~6に対応するJointを入れる
+3. MocopiGenericReceiverプレハブを配置
+4. MocopiGenericReceiverコンポーネントのAvatarSettingsを追加して、Avatarの部分にfirefighter(RobotArmAvatarがアタッチされているゲームオブジェクト)を入れる
+5. Portを指定のものに設定する
+
+スクリプトの概要
+MocopiGenericReceiver : MocopiAvatarBaseの派生クラスを受信対象にできる汎用レシーバ
+RobotArmAvatar：mocopiからのスケルトンデータを受け取ってアームを動かす

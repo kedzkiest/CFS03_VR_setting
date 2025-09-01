@@ -1089,4 +1089,9 @@ public class HybridInverseKinematicsNode : MonoBehaviour
 
         enableKeyframeConstraints = cachedEnableKeyframeConstraints;
     }
+
+    public List<HybridIKJoint> GetIKNodes()
+    {
+        return nodes;
+    }
 }

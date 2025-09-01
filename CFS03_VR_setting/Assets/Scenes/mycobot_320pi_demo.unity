@@ -1428,52 +1428,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &94815068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 94815070}
-  - component: {fileID: 94815069}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &94815069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94815068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfeb8a328733e0644bea1b4173af8583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotArm: {fileID: 264394467}
-  IKNodes: {fileID: 1577619368}
---- !u!4 &94815070
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94815068}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1134, y: -0, z: 0.76863}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &94953564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 513500736614845214, guid: 764e187de274c17408ec631ea56195b3, type: 3}
@@ -2584,8 +2538,8 @@ GameObject:
   - component: {fileID: 331900510}
   - component: {fileID: 331900509}
   m_Layer: 0
-  m_Name: Virtual IK Goal
-  m_TagString: Untagged
+  m_Name: gripper_base
+  m_TagString: Gripper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6152,8 +6106,10 @@ MonoBehaviour:
   format: 0
   dataFolder: Data
   writeMode: 0
-  bottle: {fileID: 1483393707}
-  gripper: {fileID: 1868228612}
+  recordingMode: 0
+  bottle: {fileID: 882228738}
+  gripper: {fileID: 331900507}
+  ikNode: {fileID: 1577619369}
 --- !u!4 &991370983
 Transform:
   m_ObjectHideFlags: 0
@@ -6797,7 +6753,7 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.086000025, y: 0, z: 0.0000000037252903}
+  m_ParentAnchorPosition: {x: 0.086000025, y: 0, z: 0.00000000372529}
   m_ParentAnchorRotation: {x: 0, y: -0.7071068, z: -0.7071068, w: 0}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
@@ -10819,11 +10775,11 @@ MonoBehaviour:
   - jointTransform: {fileID: 26330063}
     initialRotation: {x: 0, y: 0, z: 0, w: 1}
     initialPosition: {x: 0, y: 0.173, z: 0}
-    initialPositionWorld: {x: 0, y: 0.173, z: 0}
-    previousPositionWorld: {x: 0, y: 0.173, z: 0}
+    initialPositionWorld: {x: -1.8041124e-16, y: 0.173, z: 1.6653345e-16}
+    previousPositionWorld: {x: -1.8041124e-16, y: 0.173, z: 1.6653345e-16}
     cachedInitialRotation: {x: 0, y: 0, z: 0, w: 0}
     cachedLocalPosition: {x: 0, y: 0, z: 0}
-    targetPosition: {x: 0, y: 0.173, z: 0}
+    targetPosition: {x: -1.8041124e-16, y: 0.173, z: 1.6653345e-16}
     targetLocalPosition: {x: 0, y: 0, z: 0}
     stretchedTargetPosition: {x: 0, y: 0, z: 0}
     isStretchNode: 0
@@ -11421,7 +11377,7 @@ Transform:
   m_GameObject: {fileID: 1654134421}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8041124e-16, y: 1.3877788e-16, z: 1.6653345e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12759,7 +12715,7 @@ GameObject:
   - component: {fileID: 1868228614}
   m_Layer: 0
   m_Name: gripper_base
-  m_TagString: Gripper
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13097,55 +13053,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f7bb111856ed439468ca5b9afb83e4e1, type: 2}
---- !u!1 &1903063715
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1903063717}
-  - component: {fileID: 1903063716}
-  m_Layer: 0
-  m_Name: DataCollector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1903063716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903063715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949b3782f8d468a439e8bdb8e5fb4c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  format: 0
-  dataFolder: Data
-  writeMode: 0
-  bottle: {fileID: 0}
-  gripper: {fileID: 1868228612}
---- !u!4 &1903063717
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903063715}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01407, y: 0, z: -1.26534}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919376899
 GameObject:
   m_ObjectHideFlags: 0
@@ -14604,6 +14511,4 @@ SceneRoots:
   - {fileID: 81130838}
   - {fileID: 1870039774}
   - {fileID: 1577619370}
-  - {fileID: 1903063717}
   - {fileID: 991370983}
-  - {fileID: 94815070}

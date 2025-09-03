@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using static RootMotion.Demos.Turret;
 
 public enum Format
 {
@@ -18,12 +21,19 @@ public enum RobotPartType
 	Gripper, 
 }
 
+public enum RecordingMode
+{
+	FK,
+	IK
+}
+
 public class DataCollector : MonoBehaviour
 {
     public Format format = Format.CSV;
 	[Header("Create a Data folder before start recording, it is a relative path from Assets/")]
 	public string dataFolder = "Data";
 	public WriteMode writeMode = WriteMode.Append;
+	public RecordingMode recordingMode = RecordingMode.FK;
 
 	public GameObject bottle;
 	public GameObject gripper;
@@ -35,8 +45,12 @@ public class DataCollector : MonoBehaviour
 
 	private long m_recordingStartTime;
 
+	[SerializeField] private HybridInverseKinematicsNode ikNode;
 
-	private void Start()
+	private List<HybridIKJoint> nodes;
+
+
+    private void Start()
 	{
 		m_robot = GameObject.FindWithTag("robot");
 
@@ -73,34 +87,87 @@ public class DataCollector : MonoBehaviour
 			else Debug.Log("Stop recording");
 		}
 
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+            if (recordingMode == RecordingMode.FK)
+            {
+                recordingMode = RecordingMode.IK;
+
+				ikNode.gameObject.SetActive(true);
+            }
+            else
+            {
+                recordingMode = RecordingMode.FK;
+
+                StartCoroutine(SetCollider());
+            }
+        }
+
 		if (m_recording)
 		{
 			// miliseconds since epoch
 			long timeStampMs = (long)(Time.time * 1000);
 			timeStampMs -= m_recordingStartTime;
 
-			string filePath;
-			foreach (GameObject part in m_robotParts)
+            string filePath;
+
+			if (recordingMode == RecordingMode.FK)
 			{
-				// record position and rotation of each part
-				if (part != null)
+                foreach (GameObject part in m_robotParts)
+                {
+                    // record position and rotation of each part
+                    if (part != null)
+                    {
+                        Vector3 pos = part.transform.position;
+                        Vector3 rot = part.transform.rotation.eulerAngles;
+
+                        filePath = $"{Application.dataPath}/{dataFolder}/{part.name}.csv";
+                        if (format == Format.CSV)
+                        {
+                            // Write column headers if the file is new or being overwritten
+                            if (writeMode == WriteMode.Overwrite || !System.IO.File.Exists(filePath))
+                            {
+                                DataWriter.WriteColumnHeaders(filePath, "PositionX,PositionY,PositionZ,RotationX,RotationY,RotationZ,TimeStampMs", writeMode);
+                            }
+
+                            DataWriter.WriteToCSV(filePath, pos, rot, timeStampMs, writeMode);
+                        }
+                    }
+                }
+            }
+			else
+			{
+                nodes = ikNode.GetIKNodes();
+
+				foreach(HybridIKJoint node in nodes)
 				{
-					Vector3 pos = part.transform.position;
-					Vector3 rot = part.transform.rotation.eulerAngles;
+					Vector3 pos = node.jointTransform.position;
+					Vector3 rot = node.jointTransform.rotation.eulerAngles;
 
-					filePath = $"{Application.dataPath}/{dataFolder}/{part.name}.csv";
-					if (format == Format.CSV)
-					{
-						// Write column headers if the file is new or being overwritten
-						if (writeMode == WriteMode.Overwrite || !System.IO.File.Exists(filePath))
-						{
-							DataWriter.WriteColumnHeaders(filePath, "PositionX,PositionY,PositionZ,RotationX,RotationY,RotationZ,TimeStampMs", writeMode);
-						}
+                    filePath = $"{Application.dataPath}/{dataFolder}/{node.jointTransform.gameObject.name}.csv";
 
-						DataWriter.WriteToCSV(filePath, pos, rot, timeStampMs, writeMode);
-					}
-				}
-			}
+                    if (format == Format.CSV)
+                    {
+                        // Write column headers if the file is new or being overwritten
+                        if (writeMode == WriteMode.Overwrite || !System.IO.File.Exists(filePath))
+                        {
+                            DataWriter.WriteColumnHeaders(filePath, "PositionX,PositionY,PositionZ,RotationX,RotationY,RotationZ,TimeStampMs", writeMode);
+                        }
+
+                        DataWriter.WriteToCSV(filePath, pos, rot, timeStampMs, writeMode);
+                    }
+                }
+
+                // Since the base of the robot arm is not managed in IK, add it manually to keep the same data length with other robot arm parts.
+                DataWriter.WriteToCSV(
+                    path: $"{Application.dataPath}/{dataFolder}/base.csv",
+                    position: Vector3.zero,
+                    rotation: Vector3.zero,
+                    timeStampMs,
+                    writeMode
+                );
+            }
+			
 
 			// make shift
 			if (bottle != null && gripper != null)
@@ -145,4 +212,13 @@ public class DataCollector : MonoBehaviour
 		}
 	}
 
+    private IEnumerator SetCollider()
+    {
+        m_robot.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        m_robot.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        ikNode.gameObject.SetActive(false);
+        yield return null;
+    }
 }
